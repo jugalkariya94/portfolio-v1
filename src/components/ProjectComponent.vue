@@ -62,7 +62,7 @@ export default {
         &__item 
         {
             position: relative;
-            max-height: 100%;
+            height: 100%;
             text-align: center;
         }
         
