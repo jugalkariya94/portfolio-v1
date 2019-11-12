@@ -17,10 +17,9 @@
                 <button class="project__close" @click="showProject = false"><font-awesome-icon icon="times" /></button>
 
                 <div class="project__left">
-                    <img class="project__img--modal" :src="'/img/' + project.img" alt="Project Image">
-                </div
-
-                ><div class="project__right">
+                    <img class="project__img--modal" :src="'img/' + project.img" alt="Project Image">
+                </div>
+                <div class="project__right">
                     <div class="project__label">Project</div>
                     <h3 class="project__name">{{ project.name }}</h3>
                     <ul class="project__technologies">
