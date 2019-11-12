@@ -1,18 +1,18 @@
 <template>
     <div class="portfolio">
-
+        <project-component v-for="(project, index) in projects" :key="index" :project="project"></project-component>
     </div>
 </template>
 
 <script>
+import ProjectComponent from "@/components/ProjectComponent";
 
+import {projects} from '@/data/projects'
 export default {
-    components: {},
+    components: {ProjectComponent},
     data(){return{
         loading: true,
-        projects: 
-        {
-        }
+        projects: projects
     }},
     mounted()
     {
@@ -25,7 +25,13 @@ export default {
 </script>
 
 <style lang="scss">
-    .portfolio {margin-top: 4rem}
+    .portfolio
+    {
+        display: grid;
+        grid-gap: 15em 5em;
+        padding: 5em;
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .slide-left
     {

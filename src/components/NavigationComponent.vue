@@ -9,8 +9,8 @@
 
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item" v-for="(item, index) in navItems" v-bind:key="index">
-                    <router-link :to="item.url" class="navigation__link" :key="index"><span>{{item.name}}</span></router-link>
+                <li class="navigation__item" v-for="(item, index) in navItems" :key="index">
+                    <router-link :to="item.url" class="navigation__link"><span>{{item.name}}</span></router-link>
                 </li>
             </ul>
         </nav>

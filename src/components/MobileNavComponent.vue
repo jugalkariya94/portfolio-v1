@@ -9,8 +9,8 @@
             <div class="menu__sidebar">
                 <nav class="menu__sidebar__links">
                     <ul class="menu__sidebar__links__list">
-                        <li class="menu__sidebar__links__list__item" v-for="(item, index) in navItems" v-bind:key="index">
-                            <router-link :to="item.url" class="menu__sidebar__links__list__item__link" :key="index" @click.native="hideNavigation">{{item.name}}</router-link>
+                        <li class="menu__sidebar__links__list__item" v-for="(item, index) in navItems" :key="index">
+                            <router-link :to="item.url" class="menu__sidebar__links__list__item__link" @click.native="hideNavigation">{{item.name}}</router-link>
                         </li>
                     </ul>
                 </nav>

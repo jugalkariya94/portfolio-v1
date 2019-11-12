@@ -24,7 +24,7 @@
                     <div class="project__label">Project</div>
                     <h3 class="project__name">{{ project.name }}</h3>
                     <ul class="project__technologies">
-                        <li class="project__technology" v-for="(technology, index) in project.technologies" :key="index">{{ technology.name }}</li>
+                        <li class="project__technology" v-for="(technology, index) in project.technologies" :key="index">{{ technology }}</li>
                     </ul>
                     <div class="project__label">About</div>
                     <p class="project__summary">
@@ -59,10 +59,12 @@ export default {
         opacity: 1;
         transition: all 300ms ease-out;
         visibility: visible;
-        
+
         &__item 
         {
             position: relative;
+            max-height: 100%;
+            text-align: center;
         }
         
         &:hover &__overlay
@@ -78,14 +80,14 @@ export default {
 
         &__img 
         {
-            width: 100%;
             transition: all 200ms;
-            &--modal 
+            max-height: 100%;
+            max-width: 100%;
+            &--modal
             {
                 object-fit: cover;
-                width: 100%;
-                height: 100%;
-
+                max-width: 100%;
+                max-height: 100%;
                 @media only screen and (max-width: 45em) 
                 {
                     object-fit: contain;
@@ -125,12 +127,12 @@ export default {
         {
             display: inline-block;
             text-decoration: none;
-            color: $color-secondary;
+            color: $color-white;
             font-family: $font-primary;
             font-size: 1.8rem;
             letter-spacing: 1px;
             margin: 0 1rem;
-            background-color: rgba($color-white, .8);
+            background-color: rgba($color-primary, .8);
             border: none;
             border-radius: 3px;
             padding: .5rem 2rem;
@@ -144,8 +146,7 @@ export default {
             &:disabled, &:disabled:hover
             {
                 background-color: rgba($color-white, .4);
-                cursor: default;
-                
+                cursor: not-allowed;
             }
 
             svg 
@@ -191,17 +192,20 @@ export default {
             position: relative;
             width: 100rem;
             height: 50rem;
-            background-color: $color-primary;
+            background-color: $color-static-bg;
             user-select: text;
             box-shadow: 0 0 5px $color-black;
             opacity: 0;
             transition: all 400ms 200ms $cubic-bezier-primary;
             transform: translate(-50%, -50%) scale(.25);
+            top: 50%;
+            left: 50%;
 
             &--show 
             {
                 opacity: 1;
                 transform: translate(-50%, -50%) scale(1);
+
             }
             
             @media only screen and (max-width: 56.25em) 
@@ -229,7 +233,7 @@ export default {
             right: 1.5rem;
             background-color: transparent;
             border: none;
-            color: $color-text;
+            color: $color-primary;
             font-size: 3rem;
             cursor: pointer;
             transition: all 200ms $cubic-bezier-primary;
@@ -245,6 +249,7 @@ export default {
             width: 60rem;
             height: 100%;
             display: inline-block;
+            text-align: center;
             @media only screen and (max-width: 56.25em) 
             {
                 width: 55%;
