@@ -11,7 +11,7 @@ module.exports = {
       demo: 'https://www.erincondren.com'
     },
     {
-      name: 'Olson Visuals',
+      name: 'Olson Visual',
       img: 'ov.png',
       technologies: ['Laravel', 'VueJS', 'Laravel Nova', 'HTML', 'CSS', 'SASS', 'TAILWIND CSS', 'VueJS', 'UI/UX'],
       summary: 'Olson Visual is a large-format digital graphics provider with design, fabrication & installation capabilities for entertainment, museum, retail & event markets.\n' +
